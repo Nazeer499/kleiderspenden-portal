@@ -1,0 +1,62 @@
+/* Basic styling for the webpage */
+body {
+    font-family: Arial, sans-serif; /* Using a common, readable font */
+    margin: 0; /* No extra margins */
+    padding: 0; /* No extra padding */
+    line-height: 1.6; /* Slightly increased line height for better readability */
+}
+
+/* Styling for the header section */
+header {
+    background: #2c3e50; /* Dark blue background for the header */
+    color: #fff; /* White text color for contrast */
+    padding: 20px 0; /* Padding for some space around the content */
+    text-align: center; /* Center-aligned text */
+}
+
+/* Styling for the logo within the header */
+header .logo {
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    gap: 15px; /* Space between the image and text */
+}
+
+/* Styling for the logo image */
+header .logo img {
+    width: 50px; /* Image width */
+    height: 50px; /* Image height */
+}
+
+/* Styling for the navigation menu within the header */
+header nav ul {
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* No extra padding */
+    display: flex; /* Flexbox for alignment */
+    justify-content: center; /* Center items horizontally */
+    gap: 20px; /* Space between list items */
+    margin-top: 10px; /* Space below the logo */
+}
+
+/* Styling for the navigation links */
+header nav ul li a {
+    color: #fff; /* White text color */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Styling for the main content section */
+main {
+    padding: 20px; /* Padding for some space around the content */
+    text-align: center; /* Center-aligned text */
+}
+
+/* Styling for the footer section */
+footer {
+    background: #34495e; /* Darker blue background for the footer */
+    color: #fff; /* White text color for contrast */
+    text-align: center; /* Center-aligned text */
+    padding: 10px 0; /* Padding for some space around the content */
+    position: fixed; /* Fixed position at the bottom */
+    bottom: 0; /* Stick to the bottom */
+    width: 100%; /* Full width */
+}
