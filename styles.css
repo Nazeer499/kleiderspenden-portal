@@ -1,123 +1,111 @@
 /* Grundlegendes Styling für die Webseite */
 body {
-    font-family: Arial, sans-serif; /* Verwendung einer gängigen, lesbaren Schriftart */
-    margin: 0; /* Keine zusätzlichen Ränder */
-    padding: 0; /* Keine zusätzliche Polsterung */
-    line-height: 1.6; /* Geringfügig erhöhte Zeilenhöhe für bessere Lesbarkeit */
+    font-family: Arial, sans-serif; /* Einfache Schriftart */
+    margin: 0; /* Keine Ränder */
+    padding: 0; /* Keine Polsterung */
+    line-height: 1.6; /* Bessere Lesbarkeit */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Volle Höhe des Bildschirms */
 }
 
 /* Styling für den Kopfbereich */
 header {
-    background: #2c3e50; /* Dunkelblauer Hintergrund für die Kopfzeile */
-    color: #fff; /* Weiße Textfarbe als Kontrast */
-    padding: 20px 0; /* Füllung für etwas Platz um den Inhalt */
-    text-align: center; /* Mittig ausgerichteter Text */
+    background: #2c3e50; /* Dunkelblauer Hintergrund */
+    color: #fff; /* Weiße Schrift */
+    padding: 20px 0; /* Innenabstand */
+    text-align: center; /* Text zentrieren */
 }
 
-/* Styling für das Logo in der Kopfzeile */
+/* Styling für das Logo */
 header .logo {
-    display: flex; /* Flexbox für die Ausrichtung */
-    align-items: center; /* Elemente vertikal zentrieren */
-    justify-content: center; /* Elemente horizontal zentrieren */
-    gap: 15px; /* Leerzeichen zwischen dem Bild und dem Text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Abstand zwischen Bild und Text */
 }
 
 /* Styling für das Logobild */
 header .logo img {
-    width: 50px; /* Bildbreite */
-    height: 50px; /* Bildhöhe */
+    width: 50px; /* Bildgröße */
+    height: 50px;
 }
 
-/* Styling für das Navigationsmenü in der Kopfzeile */
+/* Styling für das Navigationsmenü */
 header nav ul {
-    list-style: none; /* Standard-Listengestaltung entfernen */
-    padding: 0; /* Keine zusätzliche Polsterung */
-    display: flex; /* Flexbox für die Ausrichtung */
-    justify-content: center; /* Elemente horizontal zentrieren */
-    gap: 20px; /* Leerzeichen zwischen den Listeneinträgen */
-    margin-top: 10px; /* Leerzeichen unterhalb des Logos */
+    list-style: none; /* Keine Aufzählungszeichen */
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Abstand zwischen Links */
+    margin-top: 10px; /* Abstand zum Logo */
 }
 
 /* Styling für die Navigationslinks */
 header nav ul li a {
-    color: #fff; /* Weiße Textfarbe */
-    text-decoration: none; /* Unterstrich entfernen */
+    color: #fff; /* Weiße Schrift */
+    text-decoration: none; /* Keine Unterstreichung */
 }
 
 /* Styling für den Hauptinhaltsbereich */
 main {
-    padding: 20px; /* Füllung für etwas Platz um den Inhalt */
-    text-align: center; /* Mittig ausgerichteter Text */
+    flex: 1; /* Nimmt den verfügbaren Platz ein */
+    padding: 20px; /* Innenabstand */
+    text-align: center; /* Text zentrieren */
+}
+
+/* Styling für das Formular */
+form {
+    margin: 20px auto; /* Zentrieren und Abstand */
+    max-width: 400px; /* Maximale Breite */
+    padding: 20px;
+    border: 1px solid #ccc; /* Rahmen */
+    border-radius: 5px; /* Abgerundete Ecken */
 }
 
 /* Styling für die Fußzeile */
 footer {
-    background: #34495e; /* Dunklerer blauer Hintergrund für die Fußzeile */
-    color: #fff; /* Weiße Textfarbe als Kontrast */
-    text-align: center; /* Mittig ausgerichteter Text */
-    padding: 10px 0; /* Füllung für etwas Platz um den Inhalt */
-    position: fixed; /* Feste Position am unteren Rand */
-    bottom: 0; /* Am Boden bleiben */
-    width: 100%; /* Volle Breite */
-}
-
-/* Stelle sicher, dass der Footer korrekt positioniert wird */
-footer {
-    position: relative; /* Verhindert, dass der Footer überlappt */
+    background: #34495e; /* Dunklerer blauer Hintergrund */
+    color: #fff; /* Weiße Schrift */
+    text-align: center; /* Text zentrieren */
+    padding: 10px 0; /* Innenabstand */
+    position: relative; /* Relative Positionierung */
     bottom: 0;
     width: 100%;
-    background-color: #f1f1f1;
-    text-align: center;
-    padding: 10px 0;
 }
 
-/* Platz schaffen, damit der Footer nicht den Content überdeckt */
-body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Gesamte Fensterhöhe abdecken */
-}
-
-main {
-    flex: 1; /* Lässt den Hauptinhalt den verbleibenden Platz einnehmen */
-    padding: 20px;
-}
-
-form {
-    margin-bottom: 50px; /* Platz schaffen unter dem Formular */
-}
-
+/* Styling für Buttons */
 button {
     display: block;
     margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #2c3e50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-
-/* Standard-Stile für größere Bildschirme (Desktop) */
-
-/* Für Tablets (Bildschirmbreiten zwischen 600px und 900px) */
+/* Responsive Stile für Tablets */
 @media (max-width: 900px) {
     header, footer {
         text-align: center;
     }
 
     nav ul {
-        display: flex;
-        flex-direction: column;
+        flex-direction: column; /* Links untereinander */
         align-items: center;
     }
 
-    #content, #register {
-        padding: 10px;
+    form {
+        width: 90%; /* Breite anpassen */
     }
 }
 
-/* Für Smartphones (Bildschirmbreiten unter 600px) */
+/* Responsive Stile für Smartphones */
 @media (max-width: 600px) {
     body {
-        font-size: 14px;
+        font-size: 14px; /* Kleinere Schrift */
     }
 
     header, footer {
@@ -125,19 +113,17 @@ button {
     }
 
     nav ul {
-        display: flex;
-        flex-direction: column;
+        flex-direction: column; /* Links untereinander */
         align-items: center;
     }
 
     form {
-        width: 100%;
+        width: 100%; /* Volle Breite */
     }
 
     input, select, button {
-        width: 100%;
-        margin-bottom: 10px;
-        font-size: 16px;
+        width: 100%; /* Volle Breite */
+        margin-bottom: 10px; /* Abstand zwischen Feldern */
+        font-size: 16px; /* Größere Schrift */
     }
 }
-
