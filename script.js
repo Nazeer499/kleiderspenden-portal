@@ -66,3 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         confirmationSection.style.display = "none";
     });
 });
+// Zeigt die entsprechenden Felder basierend auf der Auswahl der Übergabeart
+deliveryOption.addEventListener("change", () => {
+    ...
+});
