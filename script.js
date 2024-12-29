@@ -137,23 +137,28 @@ document.getElementById("donation-form").addEventListener("submit", function (ev
     let crisisArea = "";
     let pickupAddress = "";
 
+    // Daten basierend auf der Übergabeoption auslesen
     if (deliveryOption === "station") {
-        // Daten für die Geschäftsstelle
-        clothingType = document.getElementById("clothing-type").value;
+        // Geschäftsstelle: Felder auslesen
+        clothingType = document.getElementById("clothing-type").value.trim();
         crisisArea = document.getElementById("crisis-area").value;
     } else if (deliveryOption === "pickup") {
-        // Daten für die Abholung
-        clothingType = document.getElementById("clothing-type-pickup").value;
+        // Abholung: Felder auslesen
+        clothingType = document.getElementById("clothing-type-pickup").value.trim();
         crisisArea = document.getElementById("crisis-area-pickup").value;
-        pickupAddress = document.getElementById("pickup-address").value;
+        pickupAddress = document.getElementById("pickup-address").value.trim();
     }
 
-    // Überprüfen, ob die Art der Kleidung korrekt ausgelesen wurde
-    console.log("Art der Kleidung:", clothingType);
+    // Überprüfen, ob das Feld "Art der Kleidung" korrekt befüllt ist
+    if (!clothingType) {
+        alert("Bitte gib die Art der Kleidung an!");
+        return; // Verhindert die weitere Verarbeitung, wenn das Feld leer ist
+    }
 
-    // Daten auf der Bestätigungsseite anzeigen
+    // Bestätigung anzeigen
     alert(`
         Registrierung erfolgreich!
+        Übergabeoption: ${deliveryOption === "station" ? "Geschäftsstelle" : "Abholung"}
         Art der Kleidung: ${clothingType}
         Krisengebiet: ${crisisArea}
         ${pickupAddress ? "Abholadresse: " + pickupAddress : ""}
@@ -164,5 +169,6 @@ document.getElementById("donation-form").addEventListener("submit", function (ev
     document.getElementById("station-fields").style.display = "none";
     document.getElementById("pickup-fields").style.display = "none";
 });
+
 
 
