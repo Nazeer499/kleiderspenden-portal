@@ -61,6 +61,7 @@ form {
     padding: 20px;
     border: 1px solid #ccc; /* Rahmen */
     border-radius: 5px; /* Abgerundete Ecken */
+    background: #f9f9f9; /* Hintergrundfarbe */
 }
 
 /* Styling für die Fußzeile */
@@ -69,8 +70,7 @@ footer {
     color: #fff; /* Weiße Schrift */
     text-align: center; /* Text zentrieren */
     padding: 10px 0; /* Innenabstand */
-    position: relative; /* Relative Positionierung */
-    bottom: 0;
+    margin-top: auto; /* Verhindert Überlappung */
     width: 100%;
 }
 
