@@ -2,7 +2,6 @@
 <html lang="de">
 <head>
     <!-- Zeichenkodierung und Ansichtsfenstereinstellungen für die Reaktionsfähigkeit -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kleiderspenden Portal</title>
@@ -31,69 +30,59 @@
     <main>
         <h2>Willkommen beim Kleiderspenden Portal</h2>
         <p>Registrieren Sie hier Ihre Kleiderspende für Krisengebiete.</p>
-        <div id="form-container">
-            <!-- Platzhalter für das Formular, das später eingefügt wird -->
-            <!-- Hier kommt das Formular hin -->
-        </div>
+
+        <!-- Registrierungsformular -->
+        <section id="register">
+            <h2>Registriere deine Kleiderspende</h2>
+            <form id="donation-form">
+                <label for="delivery-option">Wie möchtest du die Kleidung übergeben?</label>
+                <select id="delivery-option" name="delivery-option" required>
+                    <option value="station">Übergabe an der Geschäftsstelle</option>
+                    <option value="pickup">Abholung durch Fahrzeug</option>
+                </select>
+
+                <!-- Felder für Übergabe an der Geschäftsstelle -->
+                <div id="station-fields" style="display: none;">
+                    <label for="clothing-type">Art der Kleidung:</label>
+                    <input type="text" id="clothing-type" name="clothing-type">
+
+                    <label for="crisis-area">Krisengebiet:</label>
+                    <select id="crisis-area" name="crisis-area">
+                        <option value="Syrien">Syrien</option>
+                        <option value="Ukraine">Ukraine</option>
+                        <!-- Weitere Optionen -->
+                    </select>
+                </div>
+
+                <!-- Felder für Abholung -->
+                <div id="pickup-fields" style="display: none;">
+                    <label for="pickup-address">Abholadresse:</label>
+                    <input type="text" id="pickup-address" name="pickup-address">
+
+                    <label for="clothing-type-pickup">Art der Kleidung:</label>
+                    <input type="text" id="clothing-type-pickup" name="clothing-type-pickup">
+
+                    <label for="crisis-area-pickup">Krisengebiet:</label>
+                    <select id="crisis-area-pickup" name="crisis-area-pickup">
+                        <option value="Syrien">Syrien</option>
+                        <option value="Ukraine">Ukraine</option>
+                        <!-- Weitere Optionen -->
+                    </select>
+                </div>
+
+                <button type="submit">Registrieren</button>
+            </form>
+        </section>
+
+        <!-- Bestätigungssektion -->
+        <section id="confirmation" style="display: none;">
+            <h2>Bestätigung</h2>
+            <p>Vielen Dank für Ihre Spende!</p>
+            <div id="confirmation-details"></div>
+            <button id="new-donation">Neue Spende registrieren</button>
+        </section>
     </main>
 
     <!-- Fußzeile mit Copyright und Links -->
     <footer>
-        <p>© 2024 Kleiderspenden Portal | <a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a></p>
-    </footer>
-    <!-- JavaScript -->
-    <script src="script.js"></script>
-
-<section id="confirmation" style="display: none;">
-    <h2>Bestätigung</h2>
-    <p>Vielen Dank für Ihre Spende!</p>
-    <div id="confirmation-details"></div>
-    <button id="new-donation">Neue Spende registrieren</button>
-</section>
-    
-    
-</body>
-</html>
-
-<section id="register">
-    <h2>Registriere deine Kleiderspende</h2>
-    <form id="donation-form">
-        <label for="delivery-option">Wie möchtest du die Kleidung übergeben?</label>
-        <select id="delivery-option" name="delivery-option" required>
-            <option value="station">Übergabe an der Geschäftsstelle</option>
-            <option value="pickup">Abholung durch Fahrzeug</option>
-        </select>
-
-        <!-- Felder für Übergabe an der Geschäftsstelle -->
-        <div id="station-fields" style="display: none;">
-            <label for="clothing-type">Art der Kleidung:</label>
-            <input type="text" id="clothing-type" name="clothing-type">
-
-            <label for="crisis-area">Krisengebiet:</label>
-            <select id="crisis-area" name="crisis-area">
-                <option value="Syrien">Syrien</option>
-                <option value="Ukraine">Ukraine</option>
-                <!-- Weitere Optionen -->
-            </select>
-        </div>
-
-        <!-- Felder für Abholung -->
-        <div id="pickup-fields" style="display: none;">
-            <label for="pickup-address">Abholadresse:</label>
-            <input type="text" id="pickup-address" name="pickup-address">
-
-            <label for="clothing-type-pickup">Art der Kleidung:</label>
-            <input type="text" id="clothing-type-pickup" name="clothing-type-pickup">
-
-            <label for="crisis-area-pickup">Krisengebiet:</label>
-            <select id="crisis-area-pickup" name="crisis-area-pickup">
-                <option value="Syrien">Syrien</option>
-                <option value="Ukraine">Ukraine</option>
-                <!-- Weitere Optionen -->
-            </select>
-        </div>
-
-        <button type="submit">Registrieren</button>
-    </form>
-</section>
-
+        <p>© 2024 Kleiderspenden Portal | <a href="impressum.html">Impressum</a> | <a href="datenschutz
