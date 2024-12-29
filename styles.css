@@ -1,62 +1,62 @@
-/* Basic styling for the webpage */
+/* Grundlegendes Styling für die Webseite */
 body {
-    font-family: Arial, sans-serif; /* Using a common, readable font */
-    margin: 0; /* No extra margins */
-    padding: 0; /* No extra padding */
-    line-height: 1.6; /* Slightly increased line height for better readability */
+    font-family: Arial, sans-serif; /* Verwendung einer gängigen, lesbaren Schriftart */
+    margin: 0; /* Keine zusätzlichen Ränder */
+    padding: 0; /* Keine zusätzliche Polsterung */
+    line-height: 1.6; /* Geringfügig erhöhte Zeilenhöhe für bessere Lesbarkeit */
 }
 
-/* Styling for the header section */
+/* Styling für den Kopfbereich */
 header {
-    background: #2c3e50; /* Dark blue background for the header */
-    color: #fff; /* White text color for contrast */
-    padding: 20px 0; /* Padding for some space around the content */
-    text-align: center; /* Center-aligned text */
+    background: #2c3e50; /* Dunkelblauer Hintergrund für die Kopfzeile */
+    color: #fff; /* Weiße Textfarbe als Kontrast */
+    padding: 20px 0; /* Füllung für etwas Platz um den Inhalt */
+    text-align: center; /* Mittig ausgerichteter Text */
 }
 
-/* Styling for the logo within the header */
+/* Styling für das Logo in der Kopfzeile */
 header .logo {
-    display: flex; /* Flexbox for alignment */
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
-    gap: 15px; /* Space between the image and text */
+    display: flex; /* Flexbox für die Ausrichtung */
+    align-items: center; /* Elemente vertikal zentrieren */
+    justify-content: center; /* Elemente horizontal zentrieren */
+    gap: 15px; /* Leerzeichen zwischen dem Bild und dem Text */
 }
 
-/* Styling for the logo image */
+/* Styling für das Logobild */
 header .logo img {
-    width: 50px; /* Image width */
-    height: 50px; /* Image height */
+    width: 50px; /* Bildbreite */
+    height: 50px; /* Bildhöhe */
 }
 
-/* Styling for the navigation menu within the header */
+/* Styling für das Navigationsmenü in der Kopfzeile */
 header nav ul {
-    list-style: none; /* Remove default list styling */
-    padding: 0; /* No extra padding */
-    display: flex; /* Flexbox for alignment */
-    justify-content: center; /* Center items horizontally */
-    gap: 20px; /* Space between list items */
-    margin-top: 10px; /* Space below the logo */
+    list-style: none; /* Standard-Listengestaltung entfernen */
+    padding: 0; /* Keine zusätzliche Polsterung */
+    display: flex; /* Flexbox für die Ausrichtung */
+    justify-content: center; /* Elemente horizontal zentrieren */
+    gap: 20px; /* Leerzeichen zwischen den Listeneinträgen */
+    margin-top: 10px; /* Leerzeichen unterhalb des Logos */
 }
 
-/* Styling for the navigation links */
+/* Styling für die Navigationslinks */
 header nav ul li a {
-    color: #fff; /* White text color */
-    text-decoration: none; /* Remove underline */
+    color: #fff; /* Weiße Textfarbe */
+    text-decoration: none; /* Unterstrich entfernen */
 }
 
-/* Styling for the main content section */
+/* Styling für den Hauptinhaltsbereich */
 main {
-    padding: 20px; /* Padding for some space around the content */
-    text-align: center; /* Center-aligned text */
+    padding: 20px; /* Füllung für etwas Platz um den Inhalt */
+    text-align: center; /* Mittig ausgerichteter Text */
 }
 
-/* Styling for the footer section */
+/* Styling für die Fußzeile */
 footer {
-    background: #34495e; /* Darker blue background for the footer */
-    color: #fff; /* White text color for contrast */
-    text-align: center; /* Center-aligned text */
-    padding: 10px 0; /* Padding for some space around the content */
-    position: fixed; /* Fixed position at the bottom */
-    bottom: 0; /* Stick to the bottom */
-    width: 100%; /* Full width */
+    background: #34495e; /* Dunklerer blauer Hintergrund für die Fußzeile */
+    color: #fff; /* Weiße Textfarbe als Kontrast */
+    text-align: center; /* Mittig ausgerichteter Text */
+    padding: 10px 0; /* Füllung für etwas Platz um den Inhalt */
+    position: fixed; /* Feste Position am unteren Rand */
+    bottom: 0; /* Am Boden bleiben */
+    width: 100%; /* Volle Breite */
 }
