@@ -50,8 +50,7 @@ header nav ul li a {
 /* Styling für den Hauptinhaltsbereich */
 main {
     flex: 1; /* Nimmt den verfügbaren Platz ein */
-    padding: 20px; /* Innenabstand */
-    text-align: center; /* Text zentrieren */
+    padding: 20px;
 }
 
 /* Styling für das Formular */
