@@ -60,3 +60,50 @@ footer {
     bottom: 0; /* Am Boden bleiben */
     width: 100%; /* Volle Breite */
 }
+
+/* Standard-Stile für größere Bildschirme (Desktop) */
+
+/* Für Tablets (Bildschirmbreiten zwischen 600px und 900px) */
+@media (max-width: 900px) {
+    header, footer {
+        text-align: center;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #content, #register {
+        padding: 10px;
+    }
+}
+
+/* Für Smartphones (Bildschirmbreiten unter 600px) */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    header, footer {
+        text-align: center;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    input, select, button {
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+}
+
