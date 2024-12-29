@@ -7,6 +7,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const confirmationDetails = document.getElementById("confirmation-details");
     const newDonationButton = document.getElementById("new-donation");
 
+    if (!deliveryOption || !stationFields || !pickupFields || !form || !confirmationSection || !confirmationDetails || !newDonationButton) {
+        console.error("Ein oder mehrere Elemente wurden nicht gefunden!");
+        return;
+    }
+
     // Zeige oder verstecke Felder basierend auf der Auswahl
     deliveryOption.addEventListener("change", function () {
         if (deliveryOption.value === "station") {
@@ -50,21 +55,4 @@ document.addEventListener("DOMContentLoaded", function () {
             <p><strong>Übergabeart:</strong> ${deliveryOption.options[deliveryOption.selectedIndex].text}</p>
             <p><strong>Art der Kleidung:</strong> ${clothingType}</p>
             <p><strong>Krisengebiet:</strong> ${crisisArea}</p>
-            ${deliveryOption.value === "pickup" ? `<p><strong>Abholadresse:</strong> ${document.getElementById("pickup-address").value}</p>` : ""}
-            <p><strong>Datum:</strong> ${new Date().toLocaleDateString()}</p>
-            <p><strong>Uhrzeit:</strong> ${new Date().toLocaleTimeString()}</p>
-        `;
-
-        form.style.display = "none";
-        confirmationSection.style.display = "block";
-    });
-
-    // Zurück zur Registrierung
-    newDonationButton.addEventListener("click", function () {
-        form.reset();
-        form.style.display = "block";
-        confirmationSection.style.display = "none";
-    });
-});
-
-
+           
