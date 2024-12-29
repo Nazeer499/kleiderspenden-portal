@@ -70,3 +70,8 @@ document.addEventListener("DOMContentLoaded", function () {
         form.style.display = "block";
     });
 });
+confirmationDetails.innerHTML = `
+    <p><strong>Übergabeart:</strong> ${deliveryOption.options[deliveryOption.selectedIndex].text}</p>
+    <p><strong>Art der Kleidung:</strong> ${clothingType}</p>
+    <p><strong>Krisengebiet:</strong> ${crisisArea}</p>
+`;
