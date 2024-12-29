@@ -75,3 +75,8 @@ confirmationDetails.innerHTML = `
     <p><strong>Art der Kleidung:</strong> ${clothingType}</p>
     <p><strong>Krisengebiet:</strong> ${crisisArea}</p>
 `;
+if (!clothingType) {
+    alert("Bitte geben Sie die Art der Kleidung an.");
+    return;
+}
+
