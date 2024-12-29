@@ -61,6 +61,40 @@ footer {
     width: 100%; /* Volle Breite */
 }
 
+/* Stelle sicher, dass der Footer korrekt positioniert wird */
+footer {
+    position: relative; /* Verhindert, dass der Footer überlappt */
+    bottom: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Platz schaffen, damit der Footer nicht den Content überdeckt */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Gesamte Fensterhöhe abdecken */
+}
+
+main {
+    flex: 1; /* Lässt den Hauptinhalt den verbleibenden Platz einnehmen */
+    padding: 20px;
+}
+
+form {
+    margin-bottom: 50px; /* Platz schaffen unter dem Formular */
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+}
+
+
 /* Standard-Stile für größere Bildschirme (Desktop) */
 
 /* Für Tablets (Bildschirmbreiten zwischen 600px und 900px) */
