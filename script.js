@@ -14,13 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Zeige oder verstecke Felder basierend auf der Auswahl
     deliveryOption.addEventListener("change", function () {
-        if (deliveryOption.value === "station") {
-            stationFields.style.display = "block";
-            pickupFields.style.display = "none";
-        } else if (deliveryOption.value === "pickup") {
-            stationFields.style.display = "none";
-            pickupFields.style.display = "block";
-        }
+        stationFields.style.display = deliveryOption.value === "station" ? "block" : "none";
+        pickupFields.style.display = deliveryOption.value === "pickup" ? "block" : "none";
     });
 
     // Formularvalidierung und Überprüfung der Postleitzahl
@@ -28,9 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
 
         if (deliveryOption.value === "pickup") {
-            const pickupAddress = document.getElementById("pickup-address").value;
-            const postalCode = pickupAddress.split(" ")[0]; // Erste Zahl im Feld
-            const allowedPostalCode = "68"; // Beispiel: Geschäftsstelle in PLZ 68xxx
+            const pickupAddress = document.getElementById("pickup-address").value.trim();
+            const postalCode = pickupAddress.split(" ")[0];
+            const allowedPostalCode = "68";
 
             if (!pickupAddress) {
                 alert("Bitte geben Sie eine Abholadresse ein.");
@@ -45,14 +40,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Daten sammeln und Bestätigung anzeigen
         const clothingType = deliveryOption.value === "station"
-            ? document.getElementById("clothing-type").value
-            : document.getElementById("clothing-type-pickup").value;
+            ? document.getElementById("clothing-type").value.trim()
+            : document.getElementById("clothing-type-pickup").value.trim();
         const crisisArea = deliveryOption.value === "station"
             ? document.getElementById("crisis-area").value
             : document.getElementById("crisis-area-pickup").value;
+
+        if (!clothingType) {
+            alert("Bitte geben Sie die Art der Kleidung an.");
+            return;
+        }
 
         confirmationDetails.innerHTML = `
             <p><strong>Übergabeart:</strong> ${deliveryOption.options[deliveryOption.selectedIndex].text}</p>
             <p><strong>Art der Kleidung:</strong> ${clothingType}</p>
             <p><strong>Krisengebiet:</strong> ${crisisArea}</p>
-           
+        `;
+        confirmationSection.style.display = "block";
+        form.style.display = "none";
+    });
+
+    // Neue Spende registrieren
+    newDonationButton.addEventListener("click", function () {
+        confirmationSection.style.display = "none";
+        form.style.display = "block";
+        form.reset();
+        stationFields.style.display = "none";
+        pickupFields.style.display = "none";
+    });
+});
