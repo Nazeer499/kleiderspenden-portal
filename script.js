@@ -3,12 +3,21 @@ document.getElementById("donation-form").addEventListener("submit", function (ev
 
     // Übergabeoption auslesen
     const deliveryOption = document.getElementById("delivery-option").value;
+    const allowedPostalCodes = ["68", "69", "67"];
+    const postalCode = pickupAddress.substring(0, 2);
+
+if (!allowedPostalCodes.includes(postalCode)) {
+    alert("Die Abholadresse muss in einem erlaubten Bereich liegen: 68, 69, oder 67.");
+    return;
+}
+
 
     // Überprüfen, ob eine Übergabeoption gewählt wurde
     if (!deliveryOption) {
         alert("Bitte wähle eine Übergabeoption aus!");
         return; // Verhindert die weitere Verarbeitung
     }
+    
 
     // Variablen für die Daten
     let clothingType = "";
