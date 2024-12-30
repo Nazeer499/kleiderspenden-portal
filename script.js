@@ -9,7 +9,6 @@ document.getElementById("donation-form").addEventListener("submit", function (ev
         alert("Bitte wähle eine Übergabeoption aus!");
         return; // Verhindert die weitere Verarbeitung
     }
-    
 
     // Variablen für die Daten
     let clothingType = "";
@@ -26,6 +25,21 @@ document.getElementById("donation-form").addEventListener("submit", function (ev
         clothingType = document.getElementById("clothing-type-pickup").value.trim();
         crisisArea = document.getElementById("crisis-area-pickup").value;
         pickupAddress = document.getElementById("pickup-address").value.trim();
+
+        // Abholadresse validieren
+        if (!pickupAddress) {
+            alert("Bitte gib eine Abholadresse ein!");
+            return; // Verhindert die weitere Verarbeitung, wenn das Feld leer ist
+        }
+
+        // Postleitzahl aus der Adresse extrahieren (ersten zwei Ziffern prüfen)
+        const postalCode = pickupAddress.split(" ")[0]; // Nimmt an, dass die PLZ das erste Wort ist
+        const allowedPostalCodePrefix = "68";
+
+        if (!postalCode.startsWith(allowedPostalCodePrefix)) {
+            alert("Die Abholadresse muss in der Nähe der Geschäftsstelle liegen (PLZ beginnt mit '68').");
+            return; // Verhindert die weitere Verarbeitung bei ungültiger PLZ
+        }
     }
 
     // Überprüfen, ob das Feld "Art der Kleidung" korrekt befüllt ist
