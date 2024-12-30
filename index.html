@@ -7,30 +7,45 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header mit Logo und Navigation -->
     <header>
-        <div class="logo">
-            <img src="logo.png" alt="Logo des Kleiderspenden-Portals">
-            <h1>Kleiderspenden Portal</h1>
-        </div>
+        <img src="logo.png" alt="Logo" id="logo">
+        <h1>Kleiderspenden Portal</h1>
         <nav>
             <ul>
-                <li><a href="#">Startseite</a></li>
-                <li><a href="#">Spenden</a></li>
-                <li><a href="#">Über uns</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#register">Registrierung</a></li>
+                <li><a href="#about">Über uns</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Content-Bereich -->
     <main>
-        <h2>Willkommen beim Kleiderspenden Portal</h2>
-        <p>Registrieren Sie hier Ihre Kleiderspende für Krisengebiete.</p>
-        <div id="form-container">
-            <!-- Formular wird später hier eingefügt -->
-        </div>
+        <section id="home">
+            <h2>Willkommen bei Kleiderspenden!</h2>
+            <p>Hilf uns, Kleidung in Krisengebiete zu senden.</p>
+        </section>
+
+        <section id="register">
+            <h2>Registriere deine Kleiderspende</h2>
+            <form action="#">
+                <label for="clothing-type">Art der Kleidung:</label>
+                <input type="text" id="clothing-type" name="clothing-type" required>
+                <label for="crisis-area">Krisengebiet:</label>
+                <select id="crisis-area" name="crisis-area">
+                    <option value="Syrien">Syrien</option>
+                    <option value="Ukraine">Ukraine</option>
+                    <!-- Weitere Optionen -->
+                </select>
+                <button type="submit">Registrieren</button>
+            </form>
+        </section>
     </main>
 
+    <!-- Footer mit rechtlichen Hinweisen -->
     <footer>
-        <p>© 2024 Kleiderspenden Portal | Impressum | Datenschutz</p>
+        <p>&copy; 2024 Kleiderspenden e.V. - Alle Rechte vorbehalten</p>
     </footer>
 </body>
 </html>
