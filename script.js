@@ -29,6 +29,24 @@ document.addEventListener("DOMContentLoaded", () => {
             deliveryOption.value === "station" ? "crisis-area" : "crisis-area-pickup"
         ).value;
 
+        // Abholadresse validieren, wenn die Option "pickup" gewählt ist
+        if (deliveryOption.value === "pickup") {
+            const pickupAddress = document.getElementById("pickup-address").value; // Hier wird die Abholadresse angenommen
+
+            if (!pickupAddress.startsWith("68")) {
+                alert("Die Abholadresse muss mit 68 beginnen.");
+                return;
+            }
+
+            const allowedPostalCodes = ["68", "69", "67"];
+            const postalCode = pickupAddress.substring(0, 2);
+
+            if (!allowedPostalCodes.includes(postalCode)) {
+                alert("Die Abholadresse muss in einem erlaubten Bereich liegen: 68, 69, oder 67.");
+                return;
+            }
+        }
+
         const date = new Date();
         const formattedDate = date.toLocaleDateString("de-DE");
         const formattedTime = date.toLocaleTimeString("de-DE");
