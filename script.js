@@ -60,21 +60,4 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-        // Bestätigung anzeigen
-        alert(`
-            Registrierung erfolgreich!
-            Übergabeoption: ${deliveryOption.value === "station" ? "Geschäftsstelle" : "Abholung"}
-            Art der Kleidung: ${clothingType}
-            Krisengebiet: ${crisisArea}
-            ${pickupAddress ? "Abholadresse: " + pickupAddress : ""}
-        `);
-
-        // Bestätigung anzeigen
-        confirmationPage.style.display = "block";
-        document.getElementById("confirm-clothing-type").textContent = clothingType;
-        document.getElementById("confirm-crisis-area").textContent = crisisArea;
-        document.getElementById("confirm-delivery-option").textContent = deliveryOption.value === "station" ? "Geschäftsstelle" : "Abholung";
-        document.getElementById("confirm-location").textContent = pickupAddress || "Nicht angegeben";
-        const currentDate = new Date();
-        document.getElementById("confirm-date").textContent = currentDate.toLocaleDateString();
-        document.getElementById("confirm-time").textContent = currentDate.toLocaleTimeSt
+       
