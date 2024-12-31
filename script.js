@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const donationForm = document.getElementById("donation-form");
     const confirmationPage = document.getElementById("confirmation");
 
-    const officePostalCode = "68"; // Die ersten beiden Stellen der Postleitzahl der Geschäftsstelle
+    const officePostalCode = "68"; // Die ersten beiden Stellen der Geschäftsstelle-Postleitzahl
 
     deliveryOption.addEventListener("change", () => {
         if (deliveryOption.value === "station") {
@@ -23,23 +23,16 @@ document.addEventListener("DOMContentLoaded", () => {
     donationForm.addEventListener("submit", (event) => {
         event.preventDefault();
 
-        const clothingType = document.getElementById(
-            deliveryOption.value === "station" ? "clothing-type" : "clothing-type-pickup"
-        ).value;
-        const crisisArea = document.getElementById(
-            deliveryOption.value === "station" ? "crisis-area" : "crisis-area-pickup"
-        ).value;
-
         if (deliveryOption.value === "pickup") {
-            const pickupAddress = document.getElementById("pickup-address").value;
-            const postalCodeMatch = pickupAddress.match(/\b\d{5}\b/); // Extrahiert eine 5-stellige Postleitzahl
+            const pickupAddress = document.getElementById("pickup-address").value.trim();
+            const postalCodeMatch = pickupAddress.match(/\b\d{5}\b/); // Suche nach 5-stelliger Postleitzahl
 
             if (!postalCodeMatch) {
                 alert("Bitte geben Sie eine gültige Postleitzahl in der Abholadresse an.");
                 return;
             }
 
-            const pickupPostalCode = postalCodeMatch[0].substring(0, 2); // Extrahiert die ersten beiden Stellen
+            const pickupPostalCode = postalCodeMatch[0].substring(0, 2); // Extrahiere die ersten beiden Stellen
             if (pickupPostalCode !== officePostalCode) {
                 alert(
                     "Die Abholadresse liegt nicht in der Nähe der Geschäftsstelle. Bitte überprüfen Sie die Postleitzahl."
@@ -48,26 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-        const date = new Date();
-        const formattedDate = date.toLocaleDateString("de-DE");
-        const formattedTime = date.toLocaleTimeString("de-DE");
-
-        document.getElementById("confirm-clothing-type").textContent = clothingType;
-        document.getElementById("confirm-crisis-area").textContent = crisisArea;
-        document.getElementById("confirm-delivery-option").textContent =
-            deliveryOption.options[deliveryOption.selectedIndex].text;
-        document.getElementById("confirm-date").textContent = formattedDate;
-        document.getElementById("confirm-time").textContent = formattedTime;
-
-        donationForm.style.display = "none";
-        confirmationPage.style.display = "block";
-    });
-
-    document.getElementById("new-donation").addEventListener("click", () => {
-        donationForm.reset();
-        donationForm.style.display = "block";
-        confirmationPage.style.display = "none";
-        stationFields.style.display = "none";
-        pickupFields.style.display = "none";
+        alert("Registrierung erfolgreich!");
     });
 });
