@@ -21,7 +21,7 @@ dieses Projekt ist ein website um spende fur Ukraine und syrien zur registrierun
 ### Screenshots
 
 ![Fehlermeldung bei falscher Postleitzahl](Screenshot1.png)
-![Erfolgreiche Registrierung](Screenshot2.png)
+![Erfolgreiche Registrierung](screenshot2.png)
 
 Nutzung
 
