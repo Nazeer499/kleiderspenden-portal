@@ -56,18 +56,6 @@
                     <option value="station">Übergabe an der Geschäftsstelle</option>
                     <option value="pickup">Abholung durch Fahrzeug</option>
                 </select>
- <!-- Neue Bestätigungsseite -->
-<div id="confirmation-page" style="display: none;">
-    <h2>Registrierung erfolgreich!</h2>
-    <p><strong>Art der Kleidung:</strong> <span id="confirm-clothing-type"></span></p>
-    <p><strong>Krisengebiet:</strong> <span id="confirm-crisis-area"></span></p>
-    <p><strong>Übergabeoption:</strong> <span id="confirm-delivery-option"></span></p>
-    <p><strong>Ort:</strong> <span id="confirm-location"></span></p>
-    <p><strong>Datum:</strong> <span id="confirm-date"></span></p>
-    <p><strong>Uhrzeit:</strong> <span id="confirm-time"></span></p>
-    <button onclick="restartForm()">Neue Registrierung</button>
-</div>
-                
 
                 <!-- Felder für Übergabe an der Geschäftsstelle -->
                 <div id="station-fields" style="display: none;">
@@ -101,6 +89,18 @@
                 <button type="submit">Registrieren</button>
             </form>
         </section>
+
+        <!-- Bestätigungsseite -->
+        <section id="confirmation-page" style="display: none;">
+            <h2>Registrierung erfolgreich!</h2>
+            <p><strong>Art der Kleidung:</strong> <span id="confirm-clothing-type"></span></p>
+            <p><strong>Krisengebiet:</strong> <span id="confirm-crisis-area"></span></p>
+            <p><strong>Übergabeoption:</strong> <span id="confirm-delivery-option"></span></p>
+            <p><strong>Ort:</strong> <span id="confirm-location"></span></p>
+            <p><strong>Datum:</strong> <span id="confirm-date"></span></p>
+            <p><strong>Uhrzeit:</strong> <span id="confirm-time"></span></p>
+            <button onclick="restartForm()">Neue Registrierung</button>
+        </section>
     </main>
 
     <!-- Footer mit rechtlichen Hinweisen -->
@@ -108,11 +108,5 @@
         <p>&copy; 2024 Kleiderspenden e.V. - Alle Rechte vorbehalten</p>
     </footer>
     <script src="script.js"></script>
-    <section id="confirmation" style="display: none;">
-    <h2>Bestätigung</h2>
-    <p>Vielen Dank für Ihre Spende!</p>
-    <div id="confirmation-details"></div>
-    <button id="new-donation">Neue Spende registrieren</button>
-</section>
 </body>
 </html>
