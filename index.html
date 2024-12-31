@@ -56,6 +56,18 @@
                     <option value="station">Übergabe an der Geschäftsstelle</option>
                     <option value="pickup">Abholung durch Fahrzeug</option>
                 </select>
+ <!-- Neue Bestätigungsseite -->
+<div id="confirmation-page" style="display: none;">
+    <h2>Registrierung erfolgreich!</h2>
+    <p><strong>Art der Kleidung:</strong> <span id="confirm-clothing-type"></span></p>
+    <p><strong>Krisengebiet:</strong> <span id="confirm-crisis-area"></span></p>
+    <p><strong>Übergabeoption:</strong> <span id="confirm-delivery-option"></span></p>
+    <p><strong>Ort:</strong> <span id="confirm-location"></span></p>
+    <p><strong>Datum:</strong> <span id="confirm-date"></span></p>
+    <p><strong>Uhrzeit:</strong> <span id="confirm-time"></span></p>
+    <button onclick="restartForm()">Neue Registrierung</button>
+</div>
+                
 
                 <!-- Felder für Übergabe an der Geschäftsstelle -->
                 <div id="station-fields" style="display: none;">
