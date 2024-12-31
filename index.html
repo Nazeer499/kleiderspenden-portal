@@ -5,26 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kleiderspenden Portal</title>
     <link rel="stylesheet" href="styles.css">
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const deliveryOption = document.getElementById("delivery-option");
-            const stationFields = document.getElementById("station-fields");
-            const pickupFields = document.getElementById("pickup-fields");
-
-            deliveryOption.addEventListener("change", () => {
-                if (deliveryOption.value === "station") {
-                    stationFields.style.display = "block";
-                    pickupFields.style.display = "none";
-                } else if (deliveryOption.value === "pickup") {
-                    stationFields.style.display = "none";
-                    pickupFields.style.display = "block";
-                } else {
-                    stationFields.style.display = "none";
-                    pickupFields.style.display = "none";
-                }
-            });
-        });
-    </script>
 </head>
 <body>
     <!-- Header mit Logo und Navigation -->
@@ -89,6 +69,17 @@
                 <button type="submit">Registrieren</button>
             </form>
         </section>
+
+        <!-- Bestätigungsbereich -->
+        <section id="confirmation" style="display: none;">
+            <h2>Registrierung erfolgreich!</h2>
+            <p><strong>Art der Kleidung:</strong> <span id="confirm-clothing-type"></span></p>
+            <p><strong>Krisengebiet:</strong> <span id="confirm-crisis-area"></span></p>
+            <p><strong>Übergabeoption:</strong> <span id="confirm-delivery-option"></span></p>
+            <p><strong>Datum:</strong> <span id="confirm-date"></span></p>
+            <p><strong>Uhrzeit:</strong> <span id="confirm-time"></span></p>
+            <button id="new-donation">Neue Registrierung</button>
+        </section>
     </main>
 
     <!-- Footer mit rechtlichen Hinweisen -->
@@ -96,11 +87,5 @@
         <p>&copy; 2024 Kleiderspenden e.V. - Alle Rechte vorbehalten</p>
     </footer>
     <script src="script.js"></script>
-    <section id="confirmation" style="display: none;">
-    <h2>Bestätigung</h2>
-    <p>Vielen Dank für Ihre Spende!</p>
-    <div id="confirmation-details"></div>
-    <button id="new-donation">Neue Spende registrieren</button>
-</section>
 </body>
 </html>
