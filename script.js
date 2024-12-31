@@ -5,8 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const donationForm = document.getElementById("donation-form");
     const confirmationPage = document.getElementById("confirmation");
 
-    const officePostalCode = "68"; // Die ersten beiden Stellen der Geschäftsstelle-Postleitzahl
-
     deliveryOption.addEventListener("change", () => {
         if (deliveryOption.value === "station") {
             stationFields.style.display = "block";
@@ -23,41 +21,36 @@ document.addEventListener("DOMContentLoaded", () => {
     donationForm.addEventListener("submit", (event) => {
         event.preventDefault();
 
-        let clothingType = "";
-        let crisisArea = "";
-        let pickupAddress = "";
+        // Daten aus dem Formular lesen
+        const clothingType = document.getElementById(
+            deliveryOption.value === "station" ? "clothing-type" : "clothing-type-pickup"
+        ).value;
+        const crisisArea = document.getElementById(
+            deliveryOption.value === "station" ? "crisis-area" : "crisis-area-pickup"
+        ).value;
 
-        // Daten je nach Übergabeoption auslesen
-        if (deliveryOption.value === "station") {
-            clothingType = document.getElementById("clothing-type").value.trim();
-            crisisArea = document.getElementById("crisis-area").value;
-        } else if (deliveryOption.value === "pickup") {
-            clothingType = document.getElementById("clothing-type-pickup").value.trim();
-            crisisArea = document.getElementById("crisis-area-pickup").value;
-            pickupAddress = document.getElementById("pickup-address").value.trim();
-        }
+        const date = new Date();
+        const formattedDate = date.toLocaleDateString("de-DE");
+        const formattedTime = date.toLocaleTimeString("de-DE");
 
-        // Überprüfen, ob die Art der Kleidung angegeben wurde
-        if (!clothingType) {
-            alert("Bitte gib die Art der Kleidung an!");
-            return;
-        }
+        // Bestätigungsseite befüllen
+        document.getElementById("confirm-clothing-type").textContent = clothingType;
+        document.getElementById("confirm-crisis-area").textContent = crisisArea;
+        document.getElementById("confirm-delivery-option").textContent =
+            deliveryOption.options[deliveryOption.selectedIndex].text;
+        document.getElementById("confirm-date").textContent = formattedDate;
+        document.getElementById("confirm-time").textContent = formattedTime;
 
-        // Überprüfen der Postleitzahl bei Abholung
-        if (deliveryOption.value === "pickup") {
-            const postalCodeMatch = pickupAddress.match(/\b\d{5}\b/); // Suche nach 5-stelliger Postleitzahl
-            if (!postalCodeMatch) {
-                alert("Bitte geben Sie eine gültige Postleitzahl in der Abholadresse an.");
-                return;
-            }
+        // Formular verstecken und Bestätigungsseite anzeigen
+        donationForm.style.display = "none";
+        confirmationPage.style.display = "block";
+    });
 
-            const pickupPostalCode = postalCodeMatch[0].substring(0, 2); // Extrahiere die ersten beiden Stellen
-            if (pickupPostalCode !== officePostalCode) {
-                alert(
-                    "Die Abholadresse liegt nicht in der Nähe der Geschäftsstelle. Bitte überprüfen Sie die Postleitzahl."
-                );
-                return;
-            }
-        }
-
-       
+    document.getElementById("new-donation").addEventListener("click", () => {
+        donationForm.reset();
+        donationForm.style.display = "block";
+        confirmationPage.style.display = "none";
+        stationFields.style.display = "none";
+        pickupFields.style.display = "none";
+    });
+});
